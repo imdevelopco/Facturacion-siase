@@ -1,0 +1,20 @@
+{
+  "name": "api_siase",
+  "version": "1.0.0",
+  "description": "Backend SIASE",
+  "main": "index.js",
+  "scripts": {
+    "test": "run dev"
+  },
+  "keywords": [
+    "SIASE",
+    "facturacion",
+    "electronica"
+  ],
+  "author": "Carlos Andres Cordoba Ramos",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
