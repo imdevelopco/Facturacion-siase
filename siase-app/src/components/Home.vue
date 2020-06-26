@@ -143,8 +143,9 @@ import CreateForm from './CreateForm'
       items: [
         { icon: 'mdi-account-cash', text: 'Facturación' },
         { icon: 'mdi-account-plus', text: 'Clientes' },
-        { icon: 'mdi-account-hard-hat', text: 'Usuarios del sistema' },
+        { icon: 'mdi-badge-account-horizontal', text: 'Usuarios del sistema' },
         { icon: 'mdi-file-chart', text: 'Reportes' },
+        { icon: 'mdi-ballot', text: 'Cotizaciones' },
         {
           icon: 'mdi-chevron-up',
           'icon-alt': 'mdi-chevron-down',

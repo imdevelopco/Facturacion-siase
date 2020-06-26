@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <v-main>
       <v-container
-        class="fill-height"
+        class="fill-height background"
         fluid
       >
         <v-row
@@ -22,10 +22,10 @@
               >
                 <v-toolbar-title>Soluciones Integrales a su empresa</v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-icon>mdi-earth</v-icon>
+                <img :src="logoSIASE" class="logoLogin"/>
               </v-toolbar>
               <v-card-text>
-                <v-form>
+                <v-form > 
                   <v-text-field
                     label="Usuario"
                     name="usuario"
@@ -42,9 +42,9 @@
                   ></v-text-field>
                 </v-form>
               </v-card-text>
-              <v-card-actions>
+              <v-card-actions >
                 <v-spacer></v-spacer>
-                <v-btn color="primary">Ingresar</v-btn>
+                <v-btn color="primary" @click="login">Ingresar</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -56,8 +56,25 @@
 
 <script>
   export default {
+    
     props: {
-      
+      logoSIASE: {
+        type: String,
+        default: require("../assets/logo_SIASE.png")
+      }
     },
+    methods:{
+      login(){
+        console.log("Entre");
+        
+      }
+    }
   }
 </script>
+<style>
+.logoLogin{
+  width: 50px;
+  height: auto;
+}
+
+</style>  
