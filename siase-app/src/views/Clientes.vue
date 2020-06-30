@@ -1,8 +1,8 @@
 <template>
     <div>
         <h1>Clientes</h1>
-        <!-- <Tabla align="center"></Tabla> -->
-        <ordered-table :dataProps="datos">
+        
+        <ordered-table :dataProps="datos" :headersProps="headers">
         </ordered-table>
         
 
@@ -11,11 +11,11 @@
 </template>
 
 <script>
-//import Tabla from '../components/Tabla'
+
 import OrderedTable from "../components/OrderedTable";
 export default {
     components: {
-       //Tabla
+       
        OrderedTable
     },
     computed: {
@@ -23,6 +23,17 @@ export default {
             return this.$store.state.clientes
         }
     },
+    data() {
+        return {
+            headers: [
+                {text: 'Número de Identificacion', value: 'id'},
+                {text: 'Nombre', value: 'nombre'},
+                {text: 'Teléfono', value: 'telefono'},
+                {text: 'Dirección', value: 'direccion'},
+                {text: 'Correo electrónico', value: 'email'}
+            ]
+        }
+    }
     
 }
 </script>

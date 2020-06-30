@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Tabla de Facturación</h1>
+        <h1>Cotizaciones</h1>
         <ordered-table></ordered-table>
     </div>
 </template>

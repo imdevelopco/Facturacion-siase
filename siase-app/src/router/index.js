@@ -8,6 +8,7 @@ import Usuarios from '../views/Usuarios.vue'
 import Configuracion from '../views/Configuracion.vue'
 import Reportes from '../views/Reportes.vue'
 import Navbar from '../components/AppLayout.vue'
+import Cotizaciones from "../views/Cotizaciones";
 
 Vue.use(VueRouter)
 
@@ -50,6 +51,11 @@ const routes = [{
         path: 'configuracion',
         name: 'Configuracion',
         component: Configuracion
+      },
+      {
+        path: 'cotizaciones',
+        name: 'cotizaciones',
+        component: Cotizaciones
       }
     ]
   }
