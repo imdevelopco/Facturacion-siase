@@ -44,7 +44,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="primary">Ingresar</v-btn>
+                <v-btn color="primary" to="/home">Ingresar</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
