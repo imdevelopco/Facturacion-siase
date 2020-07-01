@@ -27,10 +27,11 @@ export default {
         return {
             headers: [
                 {text: 'Número de Identificacion', value: 'id'},
-                {text: 'Nombre', value: 'nombre'},
+                {text: 'Nombre del cliente', value: 'nombre'},
                 {text: 'Teléfono', value: 'telefono'},
                 {text: 'Dirección', value: 'direccion'},
-                {text: 'Correo electrónico', value: 'email'}
+                {text: 'Correo electrónico', value: 'email'},
+                {text: 'Acciones', value: 'acciones', sortable: false}
             ]
         }
     }

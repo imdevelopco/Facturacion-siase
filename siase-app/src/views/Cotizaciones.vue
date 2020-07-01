@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Cotizaciones</h1>
-        <ordered-table></ordered-table>
+        <ordered-table :dataProps="datos" :headersProps="headers"></ordered-table>
     </div>
 </template>
 
@@ -12,11 +12,16 @@ export default {
         OrderedTable
     },
     computed: {
-
+        
     },
     data() {
         return {
-
+            headers: [
+                {text: 'Número de cotización', value: 'id'},
+                {text: 'Nombre cliente', value: 'nombre'},
+                {text: 'Fecha de cotización', value: 'fecha'},
+                {text: 'Valor total', value: 'total'}
+            ]
         }
     }
 }

@@ -1,7 +1,7 @@
 <template>
   <div>  
    <v-app id="inspire">
-
+<!--empieza el cambio-->
      <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3" dark>
       <v-toolbar-title style="width: 300px; font-size: 15px" class="ml-0 pl-4">
         <span class="hidden-sm-and-down">
@@ -20,104 +20,81 @@
         </v-avatar>
       </v-btn>
     </v-app-bar>
-
+<!--empieza el cambio-->
     <v-main>
-      <v-container fluid style="width: 500px;">
-        <v-row align="end" style="height: 250px">
-          <v-col cols="12" sm="6">
-            <div class="text-center">
-              <div class="my-2">
-                <v-btn x-large color="primary" style="width: 200px" dark to="/app/cotizaciones">
-                  <v-row>
-                    <v-col>
-                      <v-icon>mdi-point-of-sale</v-icon>
-                    </v-col>
-                    <v-col>
-                      Cotizaciones
-                    </v-col>
-                  </v-row>                
+      <v-container fluid class="fill-height" style="width: 500px;">
+        <div align="center">
+          <v-row justify="center">
+            <v-col cols="12" sm="6"  dark>
+
+              <v-btn x-large color="primary" dark style="width: 210px;" to="app/cotizaciones">                
+                <v-icon>mdi-point-of-sale</v-icon>
+                <v-spacer></v-spacer>
+                <span>Cotizaciones</span> 
+                <v-spacer></v-spacer>              
+              </v-btn>
+
+            </v-col>
+            <v-col cols="12" sm="6">
+
+              <v-btn x-large color="primary" dark style="width: 210px;" to="/app/clientes">
+                <v-icon>mdi-account-supervisor</v-icon>
+                <v-spacer></v-spacer>
+                <span>Clientes</span>
+                <v-spacer></v-spacer>                            
+              </v-btn>
+
+            </v-col>
+          </v-row>
+          <v-row justify="center">
+            <v-col cols="12" sm="6">
+              
+                <v-btn x-large color="primary" dark style="width: 210px;" to="/app/facturacion">
+                  <v-icon>mdi-cash</v-icon>
+                  <v-spacer></v-spacer>
+                  <span>Facturación</span> 
+                  <v-spacer></v-spacer>                                              
                 </v-btn>
-              </div>            
-              <div class="my-2">
-                <v-btn x-large color="primary" style="width: 200px" dark to="/app/facturacion">
-                <v-row>
-                    <v-col>
-                      <v-icon>mdi-cash</v-icon>
-                    </v-col>
-                    <v-col>
-                      Facturación
-                    </v-col>
-                  </v-row>               
-                </v-btn>
-              </div>
-            </div>
-          </v-col>
-          <v-col cols="12" sm="6">
-            <div class="text-center">
-              <div class="my-2">
-                <v-btn x-large color="primary" style="width: 200px" dark to="/app/clientes">
-                  <v-row>
-                    <v-col>
-                      <v-icon>mdi-account-supervisor</v-icon>
-                    </v-col>
-                    <v-col>
-                      Clientes
-                    </v-col>
-                  </v-row>
-                </v-btn>
-              </div>
-              <div class="my-2">
-                <v-btn color="primary" style="width: 200px" x-large dark to="/app/usuarios">
-                <v-row>
-                  <v-col>
+              
+            </v-col>
+            <v-col cols="12" sm="6">
+              
+                <v-btn x-large color="primary" dark style="width: 210px;" to="/app/usuarios">
                   <v-icon>mdi-account</v-icon>
-                  </v-col>
-                  <v-col>
-                    Usuarios
-                  </v-col>
-                </v-row>
+                  <v-spacer></v-spacer>
+                  <span>Usuarios</span>
+                  <v-spacer></v-spacer>                                   
                 </v-btn>
-              </div>
-            </div>
-          </v-col>
-        </v-row>
-        <v-row justify="center">
-            <div class="text-center">
-              <div class="my-2">
-                <v-btn color="primary" x-large dark to="/app/reportes">
-                  <v-row>
-                    <v-col>
-                    <v-icon>mdi-poll-box</v-icon>
-                    </v-col>
-                    <v-col>
-                      Reportes
-                    </v-col>
-                  </v-row>
+              
+            </v-col>
+          </v-row>
+          <v-row justify="center">
+              <v-col>
+
+                <v-btn color="primary" x-large dark style="width: 210px;" to="/app/reportes">
+                  <v-icon>mdi-poll-box</v-icon>
+                  <v-spacer></v-spacer>
+                  <span>Reportes</span>
+                  <v-spacer></v-spacer>                
                 </v-btn>
-              </div>
-            </div>
-        </v-row>
+
+              </v-col>
+          </v-row>
+        </div>
       </v-container>
     </v-main>
 
 
     </v-app>
-    
 
 
-    <v-btn bottom color="pink" dark fab fixed right @click="dialog = !dialog">
-      <v-icon>mdi-plus</v-icon>
-    </v-btn>
-    <v-dialog v-model="dialog" width="800px">
-      <CreateForm></CreateForm>
-    </v-dialog>
   </div>
 </template>
 <script>
-import CreateForm from "../components/CreateForm";
+//import CreateForm from "../components/CreateForm";
 export default {
   components: {
-    CreateForm
+    //CreateForm
   },
   data() {
     return {

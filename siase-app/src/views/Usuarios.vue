@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Tabla de Usuarios</h1>
-        <ordered-table></ordered-table>
+        <ordered-table :dataProps="datos" :headersProps="headers"></ordered-table>
     </div>
 </template>
 
@@ -16,7 +16,12 @@ export default {
     },
     data() {
         return {
-
+            headers: [
+                {text: 'Númer de identificación', value: 'id'},
+                {text: 'Nombre', value: 'nombre'},
+                {text: 'Correo electronico', value: 'email'},
+                {text: '', value: ''}
+            ]
         }
     }
 }

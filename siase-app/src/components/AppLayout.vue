@@ -75,6 +75,7 @@ export default {
     //dialog: false,
     drawer: null,
     items: [
+      {icon: "mdi-point-of-sale", text: "Cotizaciones", ruta: '/app/cotizaciones'},
       { icon: "mdi-account-cash", text: "Facturación", ruta:'/app/facturacion'},
       { icon: "mdi-account-plus", text: "Clientes", ruta: '/app/clientes'},
       { icon: "mdi-account-hard-hat", text: "Usuarios del sistema", ruta: '/app/usuarios'},
