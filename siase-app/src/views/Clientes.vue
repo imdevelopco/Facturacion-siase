@@ -5,7 +5,7 @@
         <ordered-table 
         :dataProps="datos" 
         :headersProps="headers"
-        :agregarProps="titulo"
+        :moduloProps="titulo"
         >
         </ordered-table>
         
@@ -18,8 +18,7 @@
 
 import OrderedTable from "../components/OrderedTable";
 export default {
-    components: {
-       
+    components: {       
        OrderedTable
     },
     computed: {

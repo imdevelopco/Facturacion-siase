@@ -21,7 +21,7 @@
               class="mb-2"
               v-bind="attrs"
               v-on="on"
-            >Nuevo {{ nuevo }}</v-btn>
+            >Nuevo {{ titulo }}</v-btn>
           </template>
           <v-card>
             <v-card-title>
@@ -108,13 +108,13 @@ export default {
             Type: Object
         },
         headersProps: [],
-        agregarProps: {
+        moduloProps: {
             Type: String
         }
     },
     data() {
         return {
-            nuevo: this.agregarProps,
+            titulo: this.moduloProps,
             dialog: false,
             search: '',
             headers: this.headersProps,
@@ -138,7 +138,7 @@ export default {
     },
     computed: {
         formTitle () {
-        return this.editedIndex === -1 ? 'Nuevo ' + this.nuevo : 'Editar'
+        return this.editedIndex === -1 ? 'Nuevo ' + this.titulo : 'Editar'
       },
     },
     watch: {
@@ -163,7 +163,7 @@ export default {
 
       deleteItem (item) {
         const index = this.datos.indexOf(item)
-        confirm('Seguro que desea eliminar este elemento?') && this.datos.splice(index, 1)
+        confirm('Seguro que desea eliminar este elemento') && this.datos.splice(index, 1)
       },
 
       close () {

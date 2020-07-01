@@ -62,17 +62,16 @@
 
 <script>
 import Content from './Content'
-//import CreateForm from './CreateForm'
+
 export default {
   props: {
     source: String
   },
   components: {
     Content
-    //CreateForm
+
   },
   data: () => ({
-    //dialog: false,
     drawer: null,
     items: [
       {icon: "mdi-point-of-sale", text: "Cotizaciones", ruta: '/app/cotizaciones'},
@@ -80,20 +79,6 @@ export default {
       { icon: "mdi-account-plus", text: "Clientes", ruta: '/app/clientes'},
       { icon: "mdi-account-hard-hat", text: "Usuarios del sistema", ruta: '/app/usuarios'},
       { icon: "mdi-file-chart", text: "Reportes", ruta:'/app/reportes'},
-      // {
-      //   icon: "mdi-chevron-up",
-      //   "icon-alt": "mdi-chevron-down",
-      //   text: "Labels",
-      //   model: true,
-      //   children: [{ icon: "mdi-plus", text: "Create label" }]
-      // },
-      // {
-      //   icon: "mdi-chevron-up",
-      //   "icon-alt": "mdi-chevron-down",
-      //   text: "More",
-      //   model: false,
-      //   children: [{ text: "Import" }, { text: "Export" }]
-      // },
       { icon: "mdi-cog", text: "Configuración", ruta:'/app/configuracion'}
     ]
   })

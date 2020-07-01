@@ -1,7 +1,12 @@
 <template>
     <div>
         <h1>Facturación</h1>
-        <ordered-table :dataProps="datos" :headersProps="headers"></ordered-table>
+        <ordered-table
+        :dataProps="datos" 
+        :headersProps="headers"
+        :moduloProps="titulo"
+        >
+        </ordered-table>
     </div>
 </template>
 
@@ -12,15 +17,19 @@ export default {
         OrderedTable
     },
     computed: {
-        
+        datos() {
+            return this.$store.state.facturas
+        }
     },
     data() {
         return {
+            titulo: 'factura',
             headers: [
                 {text: 'Número de factura', value: 'id'},
                 {text: 'Nombre Cliente', value: 'nombre'},
                 {text: 'Fecha factura', value: 'fecha'},
-                {text: 'Valor total', value: 'total'}
+                {text: 'Valor total', value: 'total'},
+                {text: 'Acciones', value: 'acciones'}
             ]
         }
     }
