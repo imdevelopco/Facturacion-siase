@@ -2,7 +2,11 @@
     <div>
         <h1>Clientes</h1>
         
-        <ordered-table :dataProps="datos" :headersProps="headers">
+        <ordered-table 
+        :dataProps="datos" 
+        :headersProps="headers"
+        :agregarProps="titulo"
+        >
         </ordered-table>
         
 
@@ -25,6 +29,7 @@ export default {
     },
     data() {
         return {
+            titulo: 'cliente',
             headers: [
                 {text: 'Número de Identificacion', value: 'id'},
                 {text: 'Nombre del cliente', value: 'nombre'},

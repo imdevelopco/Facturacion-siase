@@ -21,7 +21,7 @@
               class="mb-2"
               v-bind="attrs"
               v-on="on"
-            >Nuevo</v-btn>
+            >Nuevo {{ nuevo }}</v-btn>
           </template>
           <v-card>
             <v-card-title>
@@ -107,10 +107,14 @@ export default {
         dataProps: {
             Type: Object
         },
-        headersProps: []
+        headersProps: [],
+        agregarProps: {
+            Type: String
+        }
     },
     data() {
         return {
+            nuevo: this.agregarProps,
             dialog: false,
             search: '',
             headers: this.headersProps,
@@ -134,7 +138,7 @@ export default {
     },
     computed: {
         formTitle () {
-        return this.editedIndex === -1 ? 'Nuevo' : 'Editar'
+        return this.editedIndex === -1 ? 'Nuevo ' + this.nuevo : 'Editar'
       },
     },
     watch: {
