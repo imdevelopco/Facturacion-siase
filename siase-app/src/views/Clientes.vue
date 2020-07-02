@@ -8,10 +8,7 @@
         :moduloProps="titulo"
         :editedItemProps="editedItem"
         >
-        </ordered-table>
-
-        <create-form></create-form>
-        
+        </ordered-table>        
 
         
     </div>
@@ -20,11 +17,9 @@
 <script>
 
 import OrderedTable from "../components/OrderedTable";
-import CreateForm from "../components/CreateForm";
 export default {
     components: {       
-       OrderedTable,
-       CreateForm
+       OrderedTable
     },
     computed: {
         datos() {

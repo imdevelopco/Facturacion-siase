@@ -125,7 +125,9 @@ export default {
         dataProps: {
             Type: Object
         },
-        headersProps: [],
+        headersProps: {
+          Type: Array
+        },
         moduloProps: {
             Type: String
         },
@@ -138,7 +140,14 @@ export default {
             titulo: this.moduloProps,
             dialog: false,
             search: '',
-            headers: this.headersProps,
+            headers: [
+                {text: 'Número de Identificacion', value: 'id'},
+                {text: 'Nombre del cliente', value: 'nombre'},
+                {text: 'Teléfono', value: 'telefono'},
+                {text: 'Dirección', value: 'direccion'},
+                {text: 'Correo electrónico', value: 'email'},
+                {text: 'Acciones', value: 'acciones', sortable: false}
+            ],
             datos: this.dataProps,
             editedIndex: -1,
             editedItem: this.editedItemProps,
