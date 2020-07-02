@@ -21,13 +21,29 @@
               class="mb-2"
               v-bind="attrs"
               v-on="on"
-            >Nuevo {{ titulo }}</v-btn>
+            >Añadir {{ titulo }}</v-btn>
           </template>
           <v-card>
             <v-card-title>
               <span class="headline">{{ formTitle }}</span>
             </v-card-title>
-
+            
+            
+            <v-card-text>
+              <v-container>
+                <v-row>
+                  <v-col
+                  cols="12" sm="6" md="4"
+                  v-for="item in Object.keys(editedItem)"
+                  :key="item"
+                  >
+                    <v-text-field v-model="editedItem[item]" :label=item></v-text-field>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </v-card-text>
+            
+            <!--
             <v-card-text>
               <v-container>
                 <v-row>
@@ -49,7 +65,7 @@
                 </v-row>
               </v-container>
             </v-card-text>
-
+            -->
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="blue darken-1" text @click="close">Cancelar</v-btn>
@@ -92,7 +108,7 @@
       <v-btn color="primary" @click="initialize">Reset</v-btn>
     </template>
     -->
-
+    
 
     </v-data-table>
 
@@ -101,8 +117,10 @@
 </template>
 
 <script>
+
 export default {
     name: "ordered-table",
+    
     props: {
         dataProps: {
             Type: Object
@@ -110,6 +128,9 @@ export default {
         headersProps: [],
         moduloProps: {
             Type: String
+        },
+        editedItemProps: {
+          Type: Object
         }
     },
     data() {
@@ -120,13 +141,14 @@ export default {
             headers: this.headersProps,
             datos: this.dataProps,
             editedIndex: -1,
-            editedItem: {
+            editedItem: this.editedItemProps,
+            /*editedItem: {
                 id: 0,
                 nombre: '',
                 telefono: '',
                 direccion: '',
                 email: ''
-            },
+            },*/
             defaultItem: {
                 id: 0,
                 nombre: '',
@@ -137,9 +159,10 @@ export default {
         }
     },
     computed: {
-        formTitle () {
-        return this.editedIndex === -1 ? 'Nuevo ' + this.titulo : 'Editar'
-      },
+      
+      formTitle () {
+        return this.editedIndex === -1 ? 'Añadir ' + this.titulo : 'Editar'
+      },      
     },
     watch: {
       dialog (val) {
@@ -150,6 +173,7 @@ export default {
     //  this.initialize()
     //},
     methods: {
+      
       //initialize () {
       //  this.datos = [
           
@@ -163,7 +187,7 @@ export default {
 
       deleteItem (item) {
         const index = this.datos.indexOf(item)
-        confirm('Seguro que desea eliminar este elemento') && this.datos.splice(index, 1)
+        confirm('Seguro que desea eliminar este elemento?') && this.datos.splice(index, 1)
       },
 
       close () {

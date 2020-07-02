@@ -5,6 +5,7 @@
         :dataProps="datos" 
         :headersProps="headers"
         :moduloProps="titulo"
+        :editedItemProps="editedItem"
         >
         </ordered-table>
     </div>
@@ -30,7 +31,13 @@ export default {
                 {text: 'Fecha factura', value: 'fecha'},
                 {text: 'Valor total', value: 'total'},
                 {text: 'Acciones', value: 'acciones'}
-            ]
+            ],
+            editedItem: {
+                id: 0,
+                nombre: '',
+                fecha: '',
+                total: ''
+            }
         }
     }
 }

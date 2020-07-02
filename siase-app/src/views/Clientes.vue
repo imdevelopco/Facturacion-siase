@@ -6,8 +6,11 @@
         :dataProps="datos" 
         :headersProps="headers"
         :moduloProps="titulo"
+        :editedItemProps="editedItem"
         >
         </ordered-table>
+
+        <create-form></create-form>
         
 
         
@@ -17,9 +20,11 @@
 <script>
 
 import OrderedTable from "../components/OrderedTable";
+import CreateForm from "../components/CreateForm";
 export default {
     components: {       
-       OrderedTable
+       OrderedTable,
+       CreateForm
     },
     computed: {
         datos() {
@@ -36,7 +41,14 @@ export default {
                 {text: 'Dirección', value: 'direccion'},
                 {text: 'Correo electrónico', value: 'email'},
                 {text: 'Acciones', value: 'acciones', sortable: false}
-            ]
+            ],
+            editedItem: {
+                id: 0,
+                nombre: '',
+                telefono: '',
+                direccion: '',
+                email: ''
+            }
         }
     }
     
