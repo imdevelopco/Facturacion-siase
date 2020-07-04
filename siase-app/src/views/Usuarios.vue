@@ -34,8 +34,6 @@ export default {
             editedItem: {
                 id: 0,
                 nombre: '',
-                telefono: '',
-                direccion: '',
                 email: ''
             }
         }

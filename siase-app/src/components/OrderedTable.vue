@@ -201,13 +201,39 @@ export default {
       },
 
       save () {
-        if (this.editedIndex > -1) {
-          Object.assign(this.datos[this.editedIndex], this.editedItem)
-        } else {
-          this.datos.push(this.editedItem)
+        let items = Object.keys(this.editedItem)
+        let enblanco = 0;
+
+        for (let i=0; i<items.length; i++){
+          if (this.editedItem[items[i]]=== '') {
+            enblanco++
+          }
         }
+        if(enblanco == 0) {
+
+          if (this.editedIndex > -1) {
+            Object.assign(this.datos[this.editedIndex], this.editedItem)
+          } else {
+            this.datos.push(this.editedItem)
+          }
+          this.close()     
+        } else {
+            alert ('No pueden quedar campos vacios')
+        }
+         
+      }
+
+        /*
+        
+
+          if (this.editedIndex > -1) {
+            Object.assign(this.datos[this.editedIndex], this.editedItem)
+          } else {
+            this.datos.push(this.editedItem)
+          }
+
         this.close()
-      },
-    },
+      */
+    }
 }
 </script>
