@@ -4,7 +4,8 @@
   "description": "Backend SIASE",
   "main": "index.js",
   "scripts": {
-    "test": "run dev"
+    "test": "run dev",
+    "server": "nodemon server.js"
   },
   "keywords": [
     "SIASE",
@@ -21,6 +22,7 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.21.1",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
     "pg": "^8.2.1"
   }
 }
