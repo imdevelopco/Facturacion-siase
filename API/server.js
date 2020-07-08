@@ -11,9 +11,14 @@ app.use(express.json());
 app.use(cors());
 //Routes
 var User = require("./routes/Users");
+var Login = require("./routes/Login");
+
 app.use('/Users',User);
-app.use("/", User);
+
+app.use('/Login',Login);
+
+
  
 app.listen(5000, function () {
-    console.log('Server corriendo en puerto s000');
+    console.log('Server corriendo en puerto 5000');
 });
