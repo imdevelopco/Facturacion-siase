@@ -12,7 +12,7 @@
           <v-col
             cols="12"
             sm="8"
-            md="4"
+            md="5"
           >
             <v-card class="elevation-12">
               <v-toolbar
@@ -22,7 +22,10 @@
               >
                 <v-toolbar-title>Soluciones Integrales a su empresa</v-toolbar-title>
                 <v-spacer></v-spacer>
-                <img :src="logoSIASE" class="logoLogin"/>
+                <v-avatar size="32px" item>
+                  <v-img :src="logo"></v-img>
+                </v-avatar>
+
               </v-toolbar>
               <v-card-text>
                 <v-form > 
@@ -44,7 +47,8 @@
               </v-card-text>
               <v-card-actions >
                 <v-spacer></v-spacer>
-                <v-btn color="primary" @click="login">Ingresar</v-btn>
+                <v-btn color="primary" to="/home">Ingresar</v-btn>
+
               </v-card-actions>
             </v-card>
           </v-col>
@@ -58,15 +62,11 @@
   export default {
     
     props: {
-      logoSIASE: {
-        type: String,
-        default: require("../assets/logo_SIASE.png")
-      }
-    },
-    methods:{
-      login(){
-        console.log("Entre");
-        
+
+      logo: {
+        Type: String,
+        default: require('../assets/logo_SIASE.png')
+
       }
     }
   }
