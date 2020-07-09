@@ -20,11 +20,13 @@ router.post("/", (req, res) => {
         let token = jwt.sign(payload,process.env.SECRET_KEY,{
           expiresIn: 1440
         })
-        res.send(token);
+      
         res.send(token);
       }else{
-        res.status(400).json({error : "No existe ese usuario"})
+        res.status(400).json({error : "Contraseña Incorrecta"})
       } 
+    }else{
+      res.status(400).json({ error: "No se encontro el usuario" });
     }
   }).catch((e) => {
     res.status(400).json({error : "Problemas con el server"})
