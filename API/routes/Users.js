@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 var User = require("../models/Users");
 
-router.get("/Users", (req, res) => {
+router.get("/", (req, res) => {
   User.getUsers()
     .then((rows) => {
       res.send(rows);
