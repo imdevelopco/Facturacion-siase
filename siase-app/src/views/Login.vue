@@ -32,14 +32,17 @@
                   <v-text-field
                     label="Usuario"
                     name="usuario"
+                    v-model="user"
                     prepend-icon="mdi-account"
                     type="text"
                   ></v-text-field>
 
                   <v-text-field
+
                     id="password"
                     label="Contraseña"
                     name="Contraseña"
+                    v-model="password"
                     prepend-icon="mdi-lock"
                     type="password"
                   ></v-text-field>
@@ -47,10 +50,10 @@
               </v-card-text>
               <v-card-actions >
                 <v-spacer></v-spacer>
-                <v-btn color="primary" to="/home">Ingresar</v-btn>
-
+                <v-btn color="primary"  @click="test">Ingresar</v-btn>
               </v-card-actions>
             </v-card>
+            
           </v-col>
         </v-row>
       </v-container>
@@ -60,13 +63,23 @@
 
 <script>
   export default {
-    
+    data: function(){
+      return {
+        user:'',
+        password: ''
+      }
+    },
     props: {
 
       logo: {
         Type: String,
         default: require('../assets/logo_SIASE.png')
 
+      }
+    },
+    methods:{
+      test(){
+        alert(this. user);
       }
     }
   }

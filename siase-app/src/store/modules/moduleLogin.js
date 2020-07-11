@@ -18,25 +18,20 @@ const moduleLogin = {
     },
   },
   actions: {
-    async retrieveToken(context, credentials){
+    async retrieveToken(context, url,credentials){
       try{
           let response = await axios.post(this.state.routeAPI + "/login",{
-          username: credentials.username, 
-          password: credentials.password });
-          const token = response.data.token
-          console.log("[Debug] la respuesta del login:", response.data.user)
-          context.commit('setUserPermission',response.data.user.is_superuser,response.data.user.is_staff)
-          localStorage.setItem('token',token)
-          localStorage.setItem('user',response.data.user.is_superuser)
-          localStorage.setItem('canAdd',response.data.user.is_staff)
-          localStorage.setItem('name',response.data.user.first_name)
+          user: credentials.user, 
+          pwd: credentials.pwd });
+          //const token = response.data.token
+          console.log("[Debug] la respuesta del login:", response.data)      
       }catch(error){
-        /* if (error.response.status == 400) {
+         if (error.response.status == 400) {
           alert("Credenciales incorrectas, intenta de nuevo");
           console.log(error.response);
          } else if(error.response){
           alert("Problemas internos")
-         } */
+         } 
          console.log(error);
          
       }
