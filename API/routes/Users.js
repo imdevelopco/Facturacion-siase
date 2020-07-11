@@ -1,8 +1,9 @@
 var express = require("express");
 var router = express.Router();
 var User = require("../models/Users");
+var verifiedToken = require("./verifiedToken")
 
-router.get("/", (req, res) => {
+router.get("/", verifiedToken,(req, res) => {
   User.getUsers()
     .then((rows) => {
       res.send(rows);
@@ -11,9 +12,6 @@ router.get("/", (req, res) => {
       console.log(err);
       throw err;
     })
-    .finally(() => {
-      //knex.destroy();
-    });
 });
 
 module.exports = router;

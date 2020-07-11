@@ -13,9 +13,9 @@ app.use(cors());
 var User = require("./routes/Users");
 var Login = require("./routes/Login");
 
-app.use('/Users',User);
+app.use('/users',User);
 
-app.use('/Login',Login);
+app.use('/login',Login);
 
 
  

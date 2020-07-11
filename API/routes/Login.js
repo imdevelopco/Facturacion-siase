@@ -5,7 +5,7 @@ var cors = require("cors");
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcrypt");
 
-process.env.SECRET_KEY = 'SECRET';
+process.env.SECRET_KEY = 'soluciones';
 
 router.post("/", (req, res) => {
   User.getUsersById(req.body.usuario)
@@ -14,13 +14,13 @@ router.post("/", (req, res) => {
       let usuario = user[0];
       if(bcrypt.compareSync(req.body.pwd,usuario.pwd)){
         const payload = {
-          name: user.nombre,
-          admin: user.tipo_usuario
+          name: usuario.nombre,
+          user: usuario.usuario,
+          admin: usuario.tipo_usuario
          };
         let token = jwt.sign(payload,process.env.SECRET_KEY,{
-          expiresIn: 1440
-        })
-      
+          expiresIn: "1h"
+        })  
         res.send(token);
       }else{
         res.status(400).json({error : "Contraseña Incorrecta"})
