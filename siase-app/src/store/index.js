@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import moduleLogin from './modules/moduleLogin'
+import moduleLogin from './modules/login'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    routeAPI: 'localhost:5000',
   clientes: [
     {
     id: 1111111,
@@ -44,6 +44,6 @@ export default new Vuex.Store({
   actions: {
   },
   modules: {
-    moduleLogin
+    moduleLogin : moduleLogin,
   }
 })

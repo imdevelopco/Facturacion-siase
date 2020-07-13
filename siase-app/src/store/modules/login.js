@@ -1,8 +1,15 @@
 import axios from 'axios';
 
-const moduleLogin = {
-  state: {
+export default {
+  namespaced: true,
 
+  state: {
+    token : this.rootState.token,
+  },
+  getters:{
+    getToken(){
+      return this.state.token
+    }
   },
   mutations: {
     retrieveToken(state,token){
@@ -20,7 +27,7 @@ const moduleLogin = {
   actions: {
     async retrieveToken(context, url,credentials){
       try{
-          let response = await axios.post(this.state.routeAPI + "/login",{
+          let response = await axios.post(this.rootState.routeAPI + "/login",{
           user: credentials.user, 
           pwd: credentials.pwd });
           //const token = response.data.token
@@ -46,7 +53,6 @@ const moduleLogin = {
         context.commit('destroyToken') 
       }
     } 
-  },
+  }
 };
 
-export default moduleLogin;
