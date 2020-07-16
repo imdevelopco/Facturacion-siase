@@ -25,7 +25,7 @@ router.beforeEach((to, from, next) => {
       }
   }else if(requiresVisitor){
       if(store.getters.loggedIn){
-          next('/app/maps');
+          next('/home');
       }else{
           next();
       }

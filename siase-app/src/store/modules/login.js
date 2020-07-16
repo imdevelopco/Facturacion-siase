@@ -4,7 +4,7 @@ export default {
   namespaced: true,
 
   state: {
-    token : this.rootState.token,
+    
   },
   getters:{
     getToken(){
@@ -15,9 +15,7 @@ export default {
     retrieveToken(state,token){
       state.token = token;
     },
-    setZoomMap(state, zoom){
-      state.googleMapSetting.zoom = zoom;
-    },
+
     //logout
     destroyToken(state){
       state.token = null;
@@ -25,22 +23,27 @@ export default {
     },
   },
   actions: {
-    async retrieveToken(context, url,credentials){
+    async retrieveToken(context,credentials){
+      
       try{
-          let response = await axios.post(this.rootState.routeAPI + "/login",{
-          user: credentials.user, 
+        console.log(credentials.user,'------',
+          credentials.pwd);
+          let response = await axios.post("http://localhost:5000/login",{
+          usuario: credentials.user, 
           pwd: credentials.pwd });
           //const token = response.data.token
-          console.log("[Debug] la respuesta del login:", response.data)      
+          console.log("Token: ",response) 
+          return response; 
+             
       }catch(error){
-         if (error.response.status == 400) {
-          alert("Credenciales incorrectas, intenta de nuevo");
-          console.log(error.response);
-         } else if(error.response){
-          alert("Problemas internos")
-         } 
-         console.log(error);
-         
+           if (error.response.status == 400) {
+              alert("Credenciales incorrectas, intenta de nuevo");
+              console.log(error.response);
+              return error.response;
+             } else if(error.response){
+              alert("Problemas internos")
+              return error.response;
+             } 
       }
     },
 

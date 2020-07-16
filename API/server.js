@@ -9,6 +9,8 @@ var cors = require('cors');
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
+
+
 //Routes
 var User = require("./routes/Users");
 var Login = require("./routes/Login");

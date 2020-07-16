@@ -8,6 +8,7 @@ var bcrypt = require("bcrypt");
 process.env.SECRET_KEY = 'soluciones';
 
 router.post("/", (req, res) => {
+  res.setHeader("Access-Control-Allow-Headers", "X-Requested-With, content-type");
   User.getUsersById(req.body.usuario)
   .then(user => {
     if(user.length > 0){

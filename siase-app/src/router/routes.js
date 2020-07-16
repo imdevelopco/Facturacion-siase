@@ -17,7 +17,7 @@ const routes = [{
     path: '/home',
     name: 'Home',
     component: Home,
-    userLoged : true //userLoged debe ser true para poder acceder a caulquiera de sus hijos
+   // userLoged : true //userLoged debe ser true para poder acceder a caulquiera de sus hijos
 
   },
   {

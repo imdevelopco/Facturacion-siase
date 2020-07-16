@@ -7,6 +7,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     routeAPI: 'localhost:5000',
+    token: null,
   clientes: [
     {
     id: 1111111,
