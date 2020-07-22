@@ -6,7 +6,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    routeAPI: 'localhost:5000',
+    routeAPI: 'http://localhost:5000',
     token: null,
   clientes: [
     {
@@ -42,7 +42,16 @@ export default new Vuex.Store({
   },
   mutations: {
   },
+  getters: {
+    getRoute(state){
+      return state.routeAPI;  
+    }
+  },
   actions: {
+    retrieveToken(state,token){
+      state.token = token;
+    },
+
   },
   modules: {
     moduleLogin : moduleLogin,

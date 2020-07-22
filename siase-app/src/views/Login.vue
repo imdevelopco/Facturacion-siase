@@ -71,7 +71,8 @@ export default {
         )
         .then(response => {
           if (response.status == 200) {
-            this.$router.push("/app");
+            this.$store.dispatch('retrieveToken',response.data);
+            this.$router.push("/home");
           }
         })
         .catch(error => {

@@ -12,6 +12,7 @@
     "core-js": "^3.6.5",
     "jwt-decode": "^2.2.0",
     "vue": "^2.6.11",
+    "vue-jwt-decode": "^0.1.0",
     "vue-router": "^3.2.0",
     "vuetable-2": "^2.0.0-beta.4",
     "vuetify": "^2.2.11",
