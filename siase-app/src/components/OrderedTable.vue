@@ -88,7 +88,7 @@
       </v-toolbar>
     </template>
 
-    <template v-slot:item.acciones="{ item }">
+    <template v-slot:item.accsiones="{ item }">
       <v-icon
         small
         class="mr-2"

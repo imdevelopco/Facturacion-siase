@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Cotizaciones</h1>
+        <h1>Ordenes de Servicio</h1>
         <ordered-table 
         :dataProps="datos" 
         :headersProps="headers"
@@ -24,11 +24,11 @@ export default {
     },
     data() {
         return {
-            titulo: 'Cotización',
+            titulo: 'Orden de servicio',
             headers: [
-                {text: 'Número de cotización', value: 'id'},
+                {text: 'Número de Orden', value: 'id'},
                 {text: 'Nombre cliente', value: 'nombre'},
-                {text: 'Fecha de cotización', value: 'fecha'},
+                {text: 'Fecha de Orden', value: 'fecha'},
                 {text: 'Valor total', value: 'total'},
                 {text: 'Acciones', value: 'acciones', sortable: false}
             ],

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import VueJwtDecode from 'vue-jwt-decode';
+//import VueJwtDecode from 'vue-jwt-decode';
 
 
 export default {

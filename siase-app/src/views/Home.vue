@@ -24,10 +24,10 @@
           <v-row justify="center">
             <v-col cols="12" sm="6"  dark>
 
-              <v-btn x-large color="primary" dark style="width: 210px;" to="app/cotizaciones">                
-                <v-icon>mdi-point-of-sale</v-icon>
+              <v-btn x-large color="primary" dark style="width: 210px;" to="app/Ordenes">                
+                <v-icon>mdi-book-cog</v-icon>
                 <v-spacer></v-spacer>
-                <span>Cotizaciones</span> 
+                <span>Ordenes</span> 
                 <v-spacer></v-spacer>              
               </v-btn>
 
@@ -47,7 +47,7 @@
             <v-col cols="12" sm="6">
               
                 <v-btn x-large color="primary" dark style="width: 210px;" to="/app/facturacion">
-                  <v-icon>mdi-cash</v-icon>
+                  <v-icon>mdi-cash-register</v-icon>
                   <v-spacer></v-spacer>
                   <span>Facturación</span> 
                   <v-spacer></v-spacer>                                              
