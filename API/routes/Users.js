@@ -3,7 +3,7 @@ var router = express.Router();
 var User = require("../models/Users");
 var verifiedToken = require("./verifiedToken")
 
-router.get("/", verifiedToken,(req, res) => {
+router.get("/", (req, res) => {
   User.getUsers()
     .then((rows) => {
       res.send(rows);
